@@ -2,7 +2,7 @@
 (include_subdirs qualified)
 
 (library
-  (public_name tree-sitter-lang.c-sharp-pro)
+  (public_name tree-sitter-lang-pro.c-sharp-pro)
   (name tree_sitter_c_sharp_pro)
   (libraries atdgen-runtime tree-sitter.run)
 
