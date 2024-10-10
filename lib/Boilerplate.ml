@@ -3819,15 +3819,11 @@ and map_top_level_item_no_statement (env : env) (x : CST.top_level_item_no_state
   | `Choice_name_decl x -> R.Case ("Choice_name_decl",
       map_namespace_member_declaration env x
     )
-  | `File_scoped_name_decl (v1, v2, v3, v4, v5) -> R.Case ("File_scoped_name_decl",
-      let v1 = R.List (List.map (map_global_statement env) v1) in
-      let v2 =
-        R.List (List.map (map_namespace_member_declaration env) v2)
-      in
-      let v3 = (* "namespace" *) token env v3 in
-      let v4 = map_name env v4 in
-      let v5 = (* ";" *) token env v5 in
-      R.Tuple [v1; v2; v3; v4; v5]
+  | `File_scoped_name_decl (v1, v2, v3) -> R.Case ("File_scoped_name_decl",
+      let v1 = (* "namespace" *) token env v1 in
+      let v2 = map_name env v2 in
+      let v3 = (* ";" *) token env v3 in
+      R.Tuple [v1; v2; v3]
     )
   )
 

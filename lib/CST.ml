@@ -1626,11 +1626,7 @@ and top_level_item_no_statement = [
   | `Prep_if_in_top_level of preproc_if_in_top_level
   | `Choice_name_decl of namespace_member_declaration
   | `File_scoped_name_decl of (
-        global_statement list (* zero or more *)
-      * namespace_member_declaration list (* zero or more *)
-      * Token.t (* "namespace" *)
-      * name
-      * Token.t (* ";" *)
+        Token.t (* "namespace" *) * name * Token.t (* ";" *)
     )
 ]
 
@@ -2095,11 +2091,7 @@ type field_declaration (* inlined *) = (
 )
 
 type file_scoped_namespace_declaration (* inlined *) = (
-    global_statement list (* zero or more *)
-  * namespace_member_declaration list (* zero or more *)
-  * Token.t (* "namespace" *)
-  * name
-  * Token.t (* ";" *)
+    Token.t (* "namespace" *) * name * Token.t (* ";" *)
 )
 
 type fixed_statement (* inlined *) = (
